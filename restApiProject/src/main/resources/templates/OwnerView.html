@@ -1,0 +1,60 @@
+
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+    <div class="pagetitle ms-2">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a th:href="@{/}"> Owner</a></li>
+                <li class="breadcrumb-item active">Owner View  </li>
+            </ol>
+        </nav>
+    </div>
+
+    <br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-11 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+                            <div class="card col-md-4 mb-2" th:each="o : ${ownerModelList}">
+                                <div class="row g-0">
+                                    <div class="col-md-12">
+                                        <div class="card-body">
+
+                                            <b><span th:text="'Owner Name   : '+${o.ownerName}"></span></b><br>
+
+                                            <b><span th:text="'Email No :   ' +${o.email}"></span></b><br>
+
+                                            <b><span th:text="'Mobile No :   ' +${o.mobile}"></span></b><br>
+
+                                        </div>
+
+                                        <div style="text-align: center">
+                                            <a class="btn btn-danger" th:href="@{'/owner/delete/'+${o.id}}"> Delete </a>
+
+                                            <a class="btn btn-warning" th:href="@{'/owner/edit/'+${o.id}}"> Update </a>
+                                        </div>
+
+                                        <div class="p-2"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end my work -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div th:insert="~{footer.html}">...</div>
+

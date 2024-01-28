@@ -1,0 +1,108 @@
+
+<div th:insert="~{header.html}"></div>
+
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a th:href="@{/}">House</a></li>
+
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center">House Edit Form</h1>
+
+                        <!-- Multi Columns Form -->
+                        <form method="post" th:action="@{/house/save}" th:object="${huoseedit}">
+
+                            <input type="hidden" th:field="*{id}">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label  class="form-label">House Location</label>
+                                    <input type="text" class="form-control" th:field="*{houseLocation}" >
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">House Bedroom</label>
+                                    <input type="text" class="form-control" th:field="*{houseBedroom}" >
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">House Unit</label>
+                                    <input type="text" class="form-control" th:field="*{houseUnit}">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">House Floor</label>
+                                    <input type="text" class="form-control" th:field="*{houseFloor}">
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Owner Name</label>
+                                    <select type="text" class="form-control" th:field="*{owner_Name}">
+                                        <option th:each="h:${ownerList}" th:text="${h.ownerName}"
+                                                th:value="${h.id}">
+                                        </option>
+                                    </select>
+                                </div>
+
+
+                                <!--                                <div class="col-md-6">-->
+                                <!--                                    <label class="form-label">Gender</label>-->
+                                <!--                                    <div class="form-check">-->
+                                <!--                                        <input class="form-check-input" type="radio" name="gender" value="Male" th:field="*{house_Gender}">-->
+                                <!--                                        <label class="form-check-label" >-->
+                                <!--                                            Male-->
+                                <!--                                        </label>-->
+                                <!--                                    </div>-->
+                                <!--                                    <div class="form-check">-->
+                                <!--                                        <input class="form-check-input" type="radio" name="gender"  value="Female" th:field="*{house_Gender}">-->
+                                <!--                                        <label class="form-check-label" >-->
+                                <!--                                            Female-->
+                                <!--                                        </label>-->
+                                <!--                                    </div>-->
+
+                                <!--                                </div>-->
+
+                            </div>
+
+                            <div class="text-center p-3">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                        <!-- End Multi Columns Form -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+<!-- End #main -->
+
+
+<div th:insert="~{footer.html}"></div>
