@@ -8,15 +8,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Entity(name = "owner_Table")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class OwnerModel {
+public class OwnerModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private  String ownerName;
     private String email;
     private String mobile;
+
 }

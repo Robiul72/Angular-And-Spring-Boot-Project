@@ -1,0 +1,35 @@
+    <div class="p-5"></div>      
+<div class="container mt-3">
+
+    <table class="table table-striped text-center" >
+        <thead >
+            <tr style="background-color: aquamarine;">
+                <th>ID</th>
+                <th>House Name</th>                
+                <th>Floor No</th>
+                <th>Unit No</th>
+                <th>Bedroom</th>
+                <th>Location</th>
+                <th>monthly_rent</th>
+                              
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let row of houseData">
+                <td>{{row.id}}</td>
+                <td>{{row.build_Name}}</td>                
+                <td>{{row.floor_No}}</td>
+                <td>{{row.unit_No}}</td>
+                <td>{{row.bedroom}}</td>
+                <td>{{row.location}}</td>
+                <td>{{row.monthly_rent}}</td>
+                <td>
+                    <!-- <button class="btn bg-warning mx-2" (click)="onEdit(row.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button> -->
+                    <!-- <button class="btn bg-danger mx-2" (click)="deleteHouse(row.id)">Delete</button> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

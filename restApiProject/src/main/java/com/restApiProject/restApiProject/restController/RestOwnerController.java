@@ -19,7 +19,7 @@ public class RestOwnerController {
 
 
     @GetMapping("/owner")
-  public   List<OwnerModel> allOwner(){
+    public  List<OwnerModel> allOwner(){
 
         return  ownerRepo.findAll();
     }
@@ -31,18 +31,29 @@ public class RestOwnerController {
 
 
 
+//    @DeleteMapping("/owner/{id}")
+//    public ResponseEntity<String> deleteOwner(@PathVariable ("id") int id){
+//        boolean esist=ownerRepo.existsById(id);
+//
+//        if(esist){
+//            ownerRepo.deleteById(id);
+//
+//            return new ResponseEntity<>("Owner is delete", HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>("Owner is not delete", HttpStatus.BAD_REQUEST);
+//
+//    }
+
     @DeleteMapping("/owner/{id}")
-    public ResponseEntity<String> deleteOwner(@PathVariable ("id") int id){
-        boolean esist=ownerRepo.existsById(id);
-
-        if(esist){
+    public void deleteOwner(@PathVariable("id")int id){
+        boolean exist=ownerRepo.existsById(id);
+        if (exist){
             ownerRepo.deleteById(id);
-
-            return new ResponseEntity<>("Owner is delete", HttpStatus.OK);
         }
-        return new ResponseEntity<>("Owner is not delete", HttpStatus.BAD_REQUEST);
 
     }
+
+
 
 
     @PutMapping("/owner/{id}")

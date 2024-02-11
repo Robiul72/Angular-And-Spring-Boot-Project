@@ -1,0 +1,255 @@
+
+
+<app-main-header></app-main-header>
+<app-main-sideber></app-main-sideber>
+
+
+<main id="main" class="main">
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center">House Add Form</h1>
+
+
+                        <!-- <form [formGroup]="formValue"> -->
+                            <form [formGroup]="formValue">
+
+                            <!-- <input type="hidden" th:field="*{id}"/> -->
+
+                            <!-- <div class="row">
+                                <div class="col-md-6">
+                                    <input type="file" th:field="*{image}" accept="image/*" onchange="previewImage()"><br>
+                                    <img th:if="${houserent.image ne null}" th:src="@{/assets/images/users/{filename}(filename=${houserent.image})}" alt="Owner Image" style="max-width: 100%;"><br>
+                                    <img id="imagePreview" src="#" alt="Owner Image" style="display: none; width: 100px;">
+                                </div>
+                            </div> -->
+
+                            <div class="p-2"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label  class="form-label">Building Name</label>
+                                    <!-- <input type="text" class="form-control" th:field="*{build_Name}" > -->
+                                    <input type="text" class="form-control" formControlName="build_Name">
+                                </div>
+
+                                <!-- <div class="col-md-6">
+                                    <label class="form-label">Owner Name</label>
+                                    <select type="text" class="form-control" th:field="*{ownerName}">
+
+                                        <option th:each="h:${ownerList}" th:text="${h.h_Rent_Owner_Name}"
+                                                th:value="${h.id}">Select One
+                                        </option>
+                                    </select>
+                                </div> -->
+
+                            </div>
+
+                            <div class="p-2"></div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Floor No</label>
+
+                                    <select  class="form-select" formControlName="floor_No">
+                                        <option value="Select One"> Select One </option>
+                                        <option value="1 Floor"> 1 Floor </option>
+                                        <option value="2 Floor"> 2 Floor </option>
+                                        <option value="3 Floor"> 3 Floor </option>
+                                        <option value="4 Floor"> 4 Floor </option>
+                                        <option value="5 Floor"> 5 Floor </option>
+                                        <option value="6 Floor"> 6 Floor </option>
+                                        <option value="7 Floor"> 7 Floor </option>
+                                        <option value="8 Floor"> 8 Floor </option>
+                                        <option value="9 Floor"> 9 Floor </option>
+                                        <option value="10 Floor"> 10 Floor </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Unit No</label>
+
+                                    <select  class="form-select" formControlName="unit_No">
+                                        <option value="Select One"> Select One </option>
+                                        <option value="A-1 ">A-1  </option>
+                                        <option value="A-2 ">A-2  </option>
+                                        <option value="B-1 "> B-1  </option>
+                                        <option value="B-2 "> B-2 </option>
+                                        <option value="C-1 "> C-1 </option>
+                                        <option value="C-2 "> C-2 </option>
+                                        <option value="D-1 "> D-1 </option>
+                                        <option value="D-2  "> D-2  </option>
+                                        <option value="E-1 "> E-1  </option>
+                                        <option value="E-2"> E-2  </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="p-2"></div>
+
+                            <div class="row">
+
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Bedroom No</label>
+
+                                    <select  class="form-select" formControlName="bedroom">
+                                        <option value="Select One"> Select One </option>
+                                        <option value="2 Bedroom"> 1 Bedroom </option>
+                                        <option value="2 Bedroom"> 2 Bedroom </option>
+                                        <option value="3 Bedroom"> 3 Bedroom </option>
+                                        <option value="4 Bedroom"> 4 Bedroom </option>
+                                        <option value="5 Bedroom"> 5 Bedroom </option>
+                                        <option value="6 Bedroom"> 6 Bedroom </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Location </label>
+                                    <select  class="form-select" formControlName="location">
+                                        <option value="Select One"> Select One </option>
+                                        <option value="Mohammadpur"> Mohammadpur </option>
+                                        <option value="Dhanmundi"> Dhanmundi </option>
+                                        <option value="Mirpur"> Mirpur </option>
+                                        <option value="Adabor"> Adabor </option>
+                                        <option value="Shere_Bangla_Nagor"> Shere_Bangla_Nagor </option>
+                                        <option value="Shahbag"> Shahbag </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label  class="form-label">Description </label>
+                                    <textarea class="form-control" formControlName="description"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label  class="form-label">Owner Name </label>
+                                    <textarea class="form-control" formControlName="description"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="p-3"><h2 style="text-align: center">Total Monthly Cost</h2></div>
+
+
+                            <!-- Monthly House Rent -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">Monthly House Rent</label>
+                                    <input type="text" class="form-control" formControlName="monthly_rent" id="monthlyRent">
+                                </div>
+
+                                <!-- Electricity Charge -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Electricity Charge</label>
+                                    <input type="text" class="form-control" formControlName="electricity_rent" id="electricityCharge">
+                                </div>
+                            </div>
+
+                            <div class="p-2"></div>
+
+                            <!-- Water Charge -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">Water Charge</label>
+                                    <input type="text" class="form-control" formControlName="water_rent" id="waterCharge">
+                                </div>
+
+                                <!-- Garbage Charge -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Garbage Charge</label>
+                                    <input type="text" class="form-control" formControlName="garbage_rent" id="garbageCharge">
+                                </div>
+                            </div>
+
+                            <div class="p-3"></div>
+
+                            <!-- Total Monthly Cost -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label"><h4>Total Monthly Cost =</h4></label>
+                                </div>
+                                <div class="col-md-9">                            
+                                    <!-- <input type="text" class="form-control" formControlName="total_cost" id="totalCost"> -->
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-9">
+                                    <button type="button" onclick="calculateTotal()">Calculate</button>
+                                </div>
+                            </div> -->
+
+
+                            <div class="text-center p-3">
+                                <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+                                <button type="button" class="btn btn-success" (click)="saveHouse()">Save</button>
+                            </div>
+
+                        </form><!-- End Multi Columns Form -->
+
+
+          
+<div class="container mt-3">
+
+    <table class="table table-striped text-center" >
+        <thead >
+            <tr style="background-color: aquamarine;">
+                <th>ID</th>
+                <th>House Name</th>                
+                <th>Floor No</th>
+                <th>Unit No</th>
+                <th>Bedroom</th>
+                <th>Location</th>
+                <th>monthly_rent</th>
+                              
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let row of houseData">
+                <td>{{row.id}}</td>
+                <td>{{row.build_Name}}</td>                
+                <td>{{row.floor_No}}</td>
+                <td>{{row.unit_No}}</td>
+                <td>{{row.bedroom}}</td>
+                <td>{{row.location}}</td>
+                <td>{{row.monthly_rent}}</td>
+                <td>
+                    <!-- <button class="btn bg-warning mx-2" (click)="onEdit(row.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button> -->
+                    <!-- <button class="btn bg-danger mx-2" (click)="deleteHouse(row.id)">Delete</button> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+
+<app-main-footer></app-main-footer> 
